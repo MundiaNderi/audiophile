@@ -13,6 +13,7 @@ export default {
     },
     extend: {
        colors: {
+        burntSienna : '#D87D4A'
        }
     },
      fontFamily: {
