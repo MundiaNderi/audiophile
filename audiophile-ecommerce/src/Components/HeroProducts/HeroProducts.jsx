@@ -1,8 +1,8 @@
 import React from 'react'
-import Earphones from '/public/image-category-thumbnail-earphones.png'
-import Speakers from '/public/image-category-thumbnail-speakers.png'
-import Headphones from '/public/image-category-thumbnail-headphones.png'
-import arrowRight from '/public/icon-arrow-right.svg'
+import Earphones from '/image-category-thumbnail-earphones.png'
+import Speakers from '/image-category-thumbnail-speakers.png'
+import Headphones from '/image-category-thumbnail-headphones.png'
+import arrowRight from '/icon-arrow-right.svg'
 
 
 

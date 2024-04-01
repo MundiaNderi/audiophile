@@ -1,6 +1,5 @@
 import React from 'react'
 import SeeProduct from '../Button/SeeProduct'
-import imageHero from '/src/assets/home/desktop/image-hero.jpg';
 
 import './Header.css'
 const Header = () => {
@@ -15,7 +14,6 @@ const Header = () => {
             <SeeProduct />
         </div>
         <div className='' >
-          <img src={imageHero} className='h-full object-cover bg-transparent' alt="headphone" id='image-hero'/>
         </div>
     </div>
   )

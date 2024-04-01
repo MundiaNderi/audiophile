@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '/Users/serahnderi/audiophile/audiophile-ecommerce/src/assets/shared/desktop/logo.svg'
+import Logo from '/logo.svg'
 import cart from '/Users/serahnderi/audiophile/audiophile-ecommerce/src/assets/shared/desktop/icon-cart.svg'
 import Hamburger from 'hamburger-react'
 
