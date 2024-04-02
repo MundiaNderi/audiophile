@@ -1,9 +1,11 @@
 import Navbar from './Components/Navbar/Navbar'
-import Header from './Components/Header/Header'
-import HeroProducts from './Components/HeroProducts/HeroProducts'
-import HeroSection from './Components/HeroSection/HeroSection'
-import AudioGear from './Components/AudioGear/AudioGear'
 import Footer from './Components/Footer/Footer'
+import { Routes , Route } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Earphones from './pages/Earphones/Earphones'
+import Headphones from './pages/Headphones/Headphones'
+import Cart from './pages/Cart/Cart'
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 
 function App() {
 
@@ -11,10 +13,13 @@ function App() {
   return (
     <div className="app">
         <Navbar />
-        <Header />
-        <HeroProducts />
-        <HeroSection />
-        <AudioGear />
+        <Routes >
+          <Route path='/' element={<Home/>} />
+          <Route path='/earphones' element={<Earphones />} />
+          <Route path='/headphones' element={<Headphones />} />
+          <Route path='/cart' element={<Cart/>} />
+          <Route path='/order' element={<PlaceOrder/>} />
+        </Routes>
         <Footer />
     </div>
   )

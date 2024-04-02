@@ -7,7 +7,7 @@ import Earphones from '/image-earphones-yx1.jpg'
 const HeroSection = () => {
   return (
     <div className='md:mx-32 px-4 flex flex-col  gap-6'>
-      <div className='bg-burntSienna flex flex-col md:flex-row items-center justify-center py-4 md:px-24 '>
+      <div className='bg-burntSienna flex flex-col md:flex-row items-center justify-center py-4 md:px-24 rounded-md '>
         <div className='items center' >
             <img src={SteinSpeaker} alt='stein speaker' className='h-50 w-80' />
         </div>
@@ -19,7 +19,7 @@ const HeroSection = () => {
         </div>
 
         {/*ZX7 Speaker */}
-        <div className=' bg-charcoalGray flex flex-row justify-between relative '>
+        <div className=' bg-charcoalGray flex flex-row justify-between rounded-md relative '>
             <img src={Speaker} alt='' />
             <div className='absolute top-4 left-20 md:top-12 ' >
               <h1>ZX7 SPEAKER</h1>

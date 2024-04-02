@@ -3,6 +3,8 @@ import Logo from '/logo.svg';
 import Twitter from '/icon-twitter.svg'
 import Facebook from '/icon-facebook.svg'
 import Instagram from '/icon-instagram.svg'
+import { Link } from 'react-router-dom'
+
 
 const Footer = () => {
   return (
@@ -14,11 +16,11 @@ const Footer = () => {
 
       {/* Navbar links */}
       <div className='text-center'>
-        <ul className='text-white md:flex gap-3 font-manrope'>
-          <li className='pt-3 md:pt-0' >HOME</li>
-          <li className='py-3 md:py-0 '>HEADPHONES</li>
-          <li className=''>SPEAKERS</li>
-          <li className='py-3 md:py-0'>EARPHONES</li>
+        <ul className='text-white  cursor-pointer md:flex gap-3 font-manrope'>
+          <Link to='/' className='pt-3 md:pt-0 hover:text-burntSienna' >HOME</Link>
+          <Link to='/headphones' className='py-3  md:py-0 hover:text-burntSienna '>HEADPHONES</Link>
+          <Link to='/speakers' className='hover:text-burntSienna'>SPEAKERS</Link>
+          <Link to='/earphones' className='py-3 md:py-0 hover:text-burntSienna'>EARPHONES</Link>
         </ul>
       </div>
     </div>
