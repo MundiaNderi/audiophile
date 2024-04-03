@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Logo from '/logo.svg'
-import cart from '/Users/serahnderi/audiophile/audiophile-ecommerce/src/assets/shared/desktop/icon-cart.svg'
+import cart from '/assets/shared/desktop/icon-cart.svg'
 import Hamburger from 'hamburger-react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'

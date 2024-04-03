@@ -16,9 +16,9 @@ const Footer = () => {
 
       {/* Navbar links */}
       <div className='text-center'>
-        <ul className='text-white  cursor-pointer md:flex gap-3 font-manrope'>
-          <Link to='/' className='pt-3 md:pt-0 hover:text-burntSienna' >HOME</Link>
-          <Link to='/headphones' className='py-3  md:py-0 hover:text-burntSienna '>HEADPHONES</Link>
+        <ul className='text-white flex flex-col md:flex-row cursor-pointer md:flex gap-3 font-manrope'>
+          <Link to='/' className='pt-3  md:pt-0 hover:text-burntSienna' >HOME</Link>
+          <Link to='/headphones' className='py-3 md:py-0 hover:text-burntSienna '>HEADPHONES</Link>
           <Link to='/speakers' className='hover:text-burntSienna'>SPEAKERS</Link>
           <Link to='/earphones' className='py-3 md:py-0 hover:text-burntSienna'>EARPHONES</Link>
         </ul>
