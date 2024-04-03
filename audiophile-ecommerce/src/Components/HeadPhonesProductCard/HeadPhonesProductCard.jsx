@@ -29,7 +29,7 @@ const HeadPhonesProductCard = () => {
               <h1 className="">{data.name}</h1>
               <p className="text-center md:text-left ">{data.description}</p>
               <Link to='/headphonesproduct' >
-                <SeeProduct />
+                <SeeProduct text='See Product' />
               </Link>
             </div>
           </div>
@@ -51,7 +51,7 @@ const HeadPhonesProductCard = () => {
                     <p>NEW PRODUCT</p>
                     <h1>{data.name}</h1>
                     <p className='text-center md:text-left' >{data.description}</p>
-                    <SeeProduct />
+                    <SeeProduct text='See Product' />
                 </div>
             </div>
         ))}
@@ -73,7 +73,7 @@ const HeadPhonesProductCard = () => {
                     <p>NEW PRODUCTS</p>
                     <h1>{data.name}</h1>
                     <p className='text-center md:text-left ' >{data.description}</p>
-                    <SeeProduct />
+                    <SeeProduct text='See Product' />
                 </div>
             </div>
         ))}

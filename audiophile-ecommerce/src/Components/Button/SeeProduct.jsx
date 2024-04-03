@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Children } from 'react'
 
-const SeeProduct = () => {
+const SeeProduct = ( {text}) => {
   return (
-    <button className='text-white font-manrope bg-burntSienna p-2 px-4' >See Product</button>
+    <button className='text-white font-manrope bg-burntSienna p-2 px-4' >{text}</button>
   )
 }
 

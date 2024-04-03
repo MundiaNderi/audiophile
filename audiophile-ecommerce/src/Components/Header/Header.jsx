@@ -19,7 +19,7 @@ const Header = () => {
             Experience natural, lifelike audio and exceptional build
             quality made for the passionate music enthusiast.
           </p>
-          <SeeProduct className='' />
+          <SeeProduct text='See Product' />
         </div>
       </div>
       <div className='hidden md:block md:w-1/2'>

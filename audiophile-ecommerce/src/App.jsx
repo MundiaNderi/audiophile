@@ -7,6 +7,7 @@ import Headphones from './pages/Headphones/Headphones'
 import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import HeadPhonesProduct from './pages/HeadPhonesProduct/HeadPhonesProduct'
+import Speakers from './pages/Speakers/Speakers'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/cart' element={<Cart/>} />
           <Route path='/order' element={<PlaceOrder/>} />
           <Route path='/headphonesproduct' element={<HeadPhonesProduct/>} />
+          <Route path='/speakers' element={<Speakers />} />
         </Routes>
         <Footer />
     </div>

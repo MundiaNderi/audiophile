@@ -14,7 +14,7 @@ const HeroSection = () => {
         <div className='text-center ' >
             <h1 className='font-manrope text-lg text-white'>ZX9 SPEAKER</h1>
             <p className='text-gray font-manrope text-center'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-            <SeeProduct />
+            <SeeProduct text='See Product' />
         </div>
         </div>
 
@@ -23,7 +23,7 @@ const HeroSection = () => {
             <img src={Speaker} alt='' />
             <div className='absolute top-4 left-20 md:top-12 ' >
               <h1>ZX7 SPEAKER</h1>
-              <SeeProduct />
+              <SeeProduct text='See Product' />
             </div>
         </div>
 
@@ -35,7 +35,7 @@ const HeroSection = () => {
 
           <div className='bg-lightGray rounded-md flex flex-col justify-center items-center px-44'>
             <h2 className='text-center'>YXI EARPHONES</h2>
-            <SeeProduct />
+            <SeeProduct text='See Product' />
           </div>
         </div>
     </div>
