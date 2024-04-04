@@ -12,13 +12,16 @@ const ProductSuggestions = () => {
 
      return (
         <>
-           <h1 className='text-center font-bold text-2xl '>YOU MAY ALSO LIKE</h1>
+           <h1 className='text-center font-bold text-2xl pb-6 '>YOU MAY ALSO LIKE</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-32 '>
                 {product.others.map((data, index) => (
-                    <div className='flex flex-col' key={index}>
-                        <img src={data.image.desktop} alt={data.name} />
-                        <p>{data.name}</p>
-                        <SeeProduct text='See Product' />
+                    <div className='flex items-center justify-center flex-col' key={index}>
+                        <img src={data.image.desktop} alt={data.name} className='rounded-md' />
+                        <p className='py-4 font-bold text-center font-manrope' >{data.name}</p>
+                        <div className=' object-center justify-center items-center '>
+                            <SeeProduct className='' text='See Product' />
+                        </div>
+                    
                     </div>
                 ))}
             </div>

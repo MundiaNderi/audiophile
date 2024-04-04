@@ -26,14 +26,14 @@ const Footer = () => {
     </div>
     <div className='pt-4 flex flex-col md:flex-row justify-between'>
         <div className=' md:w-96'>
-        <p className='text-white text-center md:text-left' >
+        <p className='text-white font-manrope text-center md:text-left' >
             Audiophile is an all in one stop to fulfill your audio needs.
             We're a small team of music lovers and sound specialists who are devoted
             to helping you get the most out of personal audio. Come and visit our demo
             facility - we’re open 7 days a week.
         </p>
 
-        <p className='pt-4'>
+        <p className='pt-4 font-manrope'>
             Copyright 2021. All Rights Reserved
         </p>
         </div>
@@ -43,7 +43,7 @@ const Footer = () => {
             <img src={Instagram} className='w-6 h-6'/>
         </div>
       </div>
-      <p className='text-white text-center md:text-left pt-10' >Copyright 2021. All Rights Reserved</p>
+      <p className='text-white font-manrope text-center md:text-left pt-10' >Copyright 2021. All Rights Reserved</p>
     </div>
   );
 };

@@ -16,18 +16,18 @@ const HeadPhonesProductCard = () => {
       <div className='flex flex-col md:flex-row px-4 md:px-32'>
         {/* XX99 Mark II Headphones */}
         {filteredData.map((data) => (
-          <div className='flex flex-col justify-center items-center md:justify-normal md:flex-row border mt-20 border-red-500 ' key={data.id}>
+          <div className='flex flex-col justify-center items-center md:justify-normal md:flex-row mt-20' key={data.id}>
             {/* Images */}
-            <div className='pr-12'>
+            <div className=''>
               <img src={data.image.mobile} className='md:hidden   rounded-md' />
-              <img src={data.image.desktop} className='hidden md:flex rounded-md pr-12 ' />
+              <img src={data.image.desktop} className='hidden md:flex rounded-md pr-24 ' />
             </div>
             
             {/* Description and Buttons */}
             <div className='flex flex-col justify-center items-center md:items-start'>
-              <p>NEW PRODUCT</p>
-              <h1 className="">{data.name}</h1>
-              <p className="text-center md:text-left ">{data.description}</p>
+              <p className=' text-burntSienna font-manrope py-2 ' >NEW PRODUCT</p>
+              <h1 className=" font-manrope font-bold text-2xl ">{data.name}</h1>
+              <p className="text-center md:text-left py-4 ">{data.description}</p>
               <Link to='/headphonesproduct' >
                 <SeeProduct text='See Product' />
               </Link>
@@ -39,19 +39,18 @@ const HeadPhonesProductCard = () => {
       <div>
         {/*XX99 Mark I Headphones */}
         {markOneData.map((data) => (
-            <div key={data.id} className=' flex flex-col md:flex-row-reverse border border-red-500 mt-16 mx-4 md:mx-32 ' >
+            <div key={data.id} className=' flex flex-col md:flex-row-reverse  mt-16 mx-4 md:mx-32 ' >
                 {/*Images */}
-                <div>
-                    <img src={data.image.mobile} className='md:hidden' />
-                    <img src={data.image.desktop} className='hidden  md:flex' />
+                <div className='' >
+                    <img src={data.image.mobile} className='md:hidden rounded-md' />
+                    <img src={data.image.desktop} className='hidden  md:flex rounded-md pl-24 ' />
                 </div>
 
             {/*Descriptions */}
                 <div className='flex flex-col justify-center items-center md:items-start ' >
-                    <p>NEW PRODUCT</p>
-                    <h1>{data.name}</h1>
-                    <p className='text-center md:text-left' >{data.description}</p>
-                    <SeeProduct text='See Product' />
+                    <h1 className='font-manrope py-4 font-bold text-2xl ' >{data.name}</h1>
+                    <p className='text-center md:text-left font-manrope pb-4' >{data.description}</p>
+                    <SeeProduct className='' text='See Product' />
                 </div>
             </div>
         ))}
@@ -60,19 +59,18 @@ const HeadPhonesProductCard = () => {
       <div>
         {/*XX59 Headphones */}
         {whiteHeadphones.map((data) => (
-            <div className='flex flex-col md:flex-row mt-16 mx-4 md:mx-32 '
+            <div className='flex flex-col pb-16 justify-center items-center md:justify-normal md:flex-row mt-20 px-6 md:mx-32 '
             key={data.id} >
                 {/*Images */}
-                <div>
-                    <img src={data.image.mobile} className='md:hidden' />
-                    <img src={data.image.desktop} className='hidden md:flex' />
+                <div className=''>
+                    <img src={data.image.mobile} className='md:hidden rounded-md' />
+                    <img src={data.image.desktop} className='hidden md:flex rounded-md pr-24 ' />
                 </div>
 
                 {/*Descriptions */}
                 <div className='flex flex-col justify-center items-center md:items-start' >
-                    <p>NEW PRODUCTS</p>
-                    <h1>{data.name}</h1>
-                    <p className='text-center md:text-left ' >{data.description}</p>
+                    <h1 className='font-manrope text-2xl font-bold py-4 ' >{data.name}</h1>
+                    <p className='text-center md:text-left pb-4 font-manrope ' >{data.description}</p>
                     <SeeProduct text='See Product' />
                 </div>
             </div>

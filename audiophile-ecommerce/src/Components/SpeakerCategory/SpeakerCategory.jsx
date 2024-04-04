@@ -20,8 +20,8 @@ const SpeakersCategory = () => {
         <div className="flex flex-col md:flex-row mx-6 md:mx-32 mt-10  " key={data.id}>
           {/*Images */}
           <div>
-            <img src={data.image.mobile } className="md:hidden" />
-            <img src={data.image.desktop} className="hidden md:flex" />
+            <img src={data.image.mobile } className="md:hidden rounded-md " />
+            <img src={data.image.desktop} className="hidden md:flex rounded-md" />
           </div> 
           <div className="flex flex-col justify-center items-center md:items-start">
             <p>NEW PRODUCT</p>
@@ -37,8 +37,8 @@ const SpeakersCategory = () => {
       {ZX9Speaker.map((data) =>(
         <div className="flex flex-col md:flex-row-reverse mt-10 px-6 md:px-32" key={data.id}>
           <div>
-            <img src={data.image.mobile} className=" md:hidden "/>
-            <img src={data.image.desktop} className="hidden md:flex" />
+            <img src={data.image.mobile} className=" md:hidden rounded-md "/>
+            <img src={data.image.desktop} className="hidden md:flex rounded-md " />
           </div>
 
           <div>

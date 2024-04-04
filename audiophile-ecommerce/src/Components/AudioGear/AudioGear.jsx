@@ -3,15 +3,15 @@ import Person from '/image-best-gear.jpg';
 
 const AudioGear = () => {
   return (
-    <div className='flex flex-col md:flex-row-reverse justify-between px-4 md:mx-32 mt-10 '>
+    <div className='flex flex-col md:flex-row-reverse pb-16 justify-between px-4 md:mx-32 mt-10 '>
       <div className='md:ml-10'>
         <img src={Person} alt='Man wearing headphones' className='rounded-md' />
       </div>
       <div className='md:w-1/2 text-center md:text-left md:justify-center flex flex-col justify-center  pt-4 '>
-        <h2 className='font-manrope text-lg font-bold'>
-            BRINGING YOU THE  BEST AUDIO GEAR
+        <h2 className='font-manrope text-2xl font-bold'>
+            BRINGING YOU THE <br /><strong className=' text-burntSienna  '>BEST</strong> AUDIO GEAR
         </h2>
-        <p className='pt-3' >
+        <p className='pt-3 font-manrope' >
           Located at the heart of New York City, Audiophile is the premier store
           for high-end headphones, earphones, speakers, and audio accessories.
           We have a large showroom and luxury demonstration rooms available for you to
