@@ -34,7 +34,7 @@ const Footer = () => {
         </p>
 
         <p className='pt-4 font-manrope'>
-            Copyright 2021. All Rights Reserved
+            Copyright 2023. All Rights Reserved
         </p>
         </div>
         <div className=' md:pt-20 flex flex-row gap-4 items-center justify-center '>
@@ -43,7 +43,7 @@ const Footer = () => {
             <img src={Instagram} className='w-6 h-6'/>
         </div>
       </div>
-      <p className='text-white font-manrope text-center md:text-left pt-10' >Copyright 2021. All Rights Reserved</p>
+      <p className='text-white font-manrope text-center md:text-left pt-10' >Copyright 2023. All Rights Reserved</p>
     </div>
   );
 };

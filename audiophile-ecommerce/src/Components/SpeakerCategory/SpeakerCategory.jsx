@@ -21,12 +21,12 @@ const SpeakersCategory = () => {
           {/*Images */}
           <div>
             <img src={data.image.mobile } className="md:hidden rounded-md " />
-            <img src={data.image.desktop} className="hidden md:flex rounded-md" />
+            <img src={data.image.desktop} className="hidden md:flex rounded-md pr-24 " />
           </div> 
           <div className="flex flex-col justify-center items-center md:items-start">
-            <p>NEW PRODUCT</p>
-            <h1>{data.name}</h1>
-            <p>{data.description}</p>
+            <p className=" text-burntSienna py-3 " >NEW PRODUCT</p>
+            <h1 className="font-manrope text-2xl font-bold pb-4 " >{data.name}</h1>
+            <p className=" font-manrope pb-4 text-center md:text-left " >{data.description}</p>
             <SeeProduct text='See Product' />
           </div>
         </div>
@@ -36,15 +36,14 @@ const SpeakersCategory = () => {
 
       {ZX9Speaker.map((data) =>(
         <div className="flex flex-col md:flex-row-reverse mt-10 px-6 md:px-32" key={data.id}>
-          <div>
+          <div className="flex flex-col justify-center items-center" >
             <img src={data.image.mobile} className=" md:hidden rounded-md "/>
-            <img src={data.image.desktop} className="hidden md:flex rounded-md " />
+            <img src={data.image.desktop} className="hidden md:flex rounded-md pl-24 " />
           </div>
 
-          <div>
-            <p>NEW PRODUCT</p>
-            <h1>{data.name}</h1>
-            <p>{data.description}</p>
+          <div className="flex flex-col justify-center md:justify-normal items-center md:items-start " >
+            <h1 className=" font-manrope text-2xl font-bold py-3 " >{data.name}</h1>
+            <p className="pb-4 font-manrope text-center md:text-left ">{data.description}</p>
             <SeeProduct  text='See Product'/>
           </div>
         </div>
