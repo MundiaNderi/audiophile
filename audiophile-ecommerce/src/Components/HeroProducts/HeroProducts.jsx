@@ -16,7 +16,7 @@ const productsData = [
 
 const HeroProducts = () => {
   return (
-    <div className='grid grid-rows-1 md:grid-cols-3 gap-20 md:gap-4 pt-16 mt-10 pb-24 items-center px-4  md:px-32' >
+    <div className='grid grid-rows-1 md:grid-cols-3 bg-white gap-20 md:gap-4 pt-16 mt-10 pb-24 items-center px-4  md:px-32' >
         {productsData.map((data, index)=> {
             return (
                 <div key={index} className=' pb-5 bg-lightGray flex flex-col justify-center items-center rounded-md' >
