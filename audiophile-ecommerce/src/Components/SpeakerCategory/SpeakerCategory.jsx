@@ -17,7 +17,7 @@ const SpeakersCategory = () => {
 
       {/*ZXZ SPEAKER */}
       {filteredSpeaker.map((data) => (
-        <div className="flex flex-col md:flex-row mx-6 md:mx-32 mt-10  " key={data.id}>
+        <div className="flex flex-col md:flex-row mx-6 md:mx-32 mt-20  " key={data.id}>
           {/*Images */}
           <div>
             <img src={data.image.mobile } className="md:hidden rounded-md " />

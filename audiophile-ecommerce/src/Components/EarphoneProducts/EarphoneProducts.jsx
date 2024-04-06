@@ -6,12 +6,12 @@ const EarphoneProducts = () => {
 
   const Earphones = EarphonesData.filter((item)=> item.id === 1)
   return (
-    <div>
-      <div className=''>
-        <h1 className='text-2xl text-white font-manrope py-10 font-bold '>SPEAKERS</h1>
+    <div className=''>
+      <div className='py-10 bg-black'>
+        <h1 className='text-2xl text-white font-manrope text-center font-bold '>EARPHONES</h1>
       </div>
 
-      <div>
+      <div className='pt-20'>
         {Earphones.map((data) => (
           <div className='flex flex-col md:flex-row px-6 md:px-32' key={data.id}>
             <div>

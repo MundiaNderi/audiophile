@@ -10,12 +10,13 @@ const Header = () => {
         <div className='md:hidden relative'>
           <img src={MobileHeadphones} className='w-full h-1/3  ' alt='Headphones' />
         </div>
-        <div className='flex flex-col items-center  md:items-start absolute md:ml-8'>
+        <div className='flex flex-col items-center  md:items-start sm:absolute'>
           <p className='text-white font-bold font-manrope'>NEW PRODUCT</p>
-          <h1 className='text-white font-bold pt-2 '>
-            XX99 Mark II Headphones
+          <h1 className='text-white py-3 text-center md:text-left font-manrope md:w-96 font-bold text-3xl '>
+            XX99 Mark II
+                  Headphones
           </h1>
-          <p className='text-white text-center md:text-left font-manrope pt-2 pb-3 '>
+          <p className='text-white text-center md:text-left font-manrope md:w-80 pt-2 py-3 '>
             Experience natural, lifelike audio and exceptional build
             quality made for the passionate music enthusiast.
           </p>

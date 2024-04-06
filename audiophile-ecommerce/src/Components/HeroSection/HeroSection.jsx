@@ -11,24 +11,26 @@ const HeroSection = () => {
         <div className='items center' >
             <img src={SteinSpeaker} alt='stein speaker' className='h-50 w-80' />
         </div>
-        <div className='text-center ' >
-            <h1 className='font-manrope text-lg text-white'>ZX9 SPEAKER</h1>
-            <p className='text-gray font-manrope text-center'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-            <SeeProduct text='See Product' />
+        <div className='text-center md:text-left md:pl-24 px-3 ' >
+            <h1 className='font-manrope font-bold text-lg py-3 text-white'>ZX9 SPEAKER</h1>
+            <p className='text-white font-manrope text-center md:text-left pb-3 '>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+            <SeeProduct text='See Product ' />
         </div>
         </div>
 
         {/*ZX7 Speaker */}
         <div className=' bg-charcoalGray flex flex-row justify-between rounded-md relative '>
-            <img src={Speaker} alt='' />
-            <div className='absolute top-4 left-20 md:top-12 ' >
+          <div className='' >
+             <img src={Speaker} alt='' />
+          </div>
+            <div className='absolute top-4 text-left left-20 md:top-12 ' >
               <h1>ZX7 SPEAKER</h1>
-              <SeeProduct text='See Product' />
+              <SeeProduct text='See Product'  />
             </div>
         </div>
 
         {/*YXI Earphones */}
-        <div className=' flex flex-col md:flex-row gap-4 justify-between ' >
+        <div className=' flex flex-col md:flex-row gap-3 justify-between ' >
           <div className='rounded-md' >
             <img src={Earphones} className='rounded-md' />
           </div>
