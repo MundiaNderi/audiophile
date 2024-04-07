@@ -1,8 +1,8 @@
 import React, { Children } from 'react'
 
-const SeeProduct = ( {text}) => {
+const SeeProduct = ( { text, onClick }) => {
   return (
-    <button className='text-white font-manrope bg-burntSienna p-2 px-4' >{text}</button>
+    <button onClick={onClick} className='text-white font-manrope bg-burntSienna hover:bg-mellowApricot p-2 px-4'  >{text}</button>
   )
 }
 

@@ -5,10 +5,6 @@ import Hamburger from 'hamburger-react'
 import HeroProducts from '../HeroProducts/HeroProducts'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import arrowRight from '/icon-arrow-right.svg'
-import Earphones from '/image-category-thumbnail-earphones.png'
-import Headphones from '/image-category-thumbnail-headphones.png'
-import Speakers from '/image-category-thumbnail-speakers.png'
 
 const Navbar = () => {
 
@@ -16,52 +12,25 @@ const Navbar = () => {
   const [menu, setMenu] = useState("menu")
 
   return (
-    <div className="navbar bg-black flex  flex-col relative justify-between pt-4 px-4 md:px-32">
-      <div className='flex flex-row items-center  justify-between pb-6'>
+    <div className="navbar bg-black flex flex-col justify-between relative pt-4 px-4 md:px-32">
+      <div className=' flex items-center justify-between pb-6'>
         {/*Hamburger menu */}
-        <div className='md:hidden absolute '>
+        <div className='hidden absolute '>
           <Hamburger
           onToggle={toggled => {
             setOpen(toggled); // Update isOpen state based on hamburger toggle
           }}
           color='white'
           />
-          {isOpen && 
-          <div className=' bg-white items-center gap justify-center flex-col '>
-            <div className='flex flex-col bg-gray py-4 items-center bg-gray rounded-md' >
-              <img src={Headphones} className='w-20 h-24 ' />
-              <h1>HEADPHONES</h1>
-              <p className='flex' >
-                SHOP
-                <img src={arrowRight} />
-              </p>
-            </div>
-
-            <div className='flex flex-col items-center bg-gray my-5 rounded-md' >
-              <img src={Speakers} className='w-20 h-24 ' />
-              <h1>SPEAKERS</h1>
-              <p className='flex' >
-                SHOP
-                <img src={arrowRight} />
-              </p>
-            </div>
-
-            <div className='flex flex-col items-center bg-gray rounded-md' >
-              <img src={Earphones} className=' w-24 h-24 ' />
-              <h1>EARPHONES</h1>
-                <p className='flex' >
-                SHOP
-                <img src={arrowRight} />
-              </p>
-            </div>
-          </div>
-          }
+          {isOpen && <HeroProducts isMobileMenuOpen={isOpen} />}
         </div>
 
 
         {/*Logo */}
         <div className=''>
-          <img src={Logo} />
+          <Link to='/'>
+            <img src={Logo} />
+          </Link>
         </div>
 
         {/*   Navbar links  */}

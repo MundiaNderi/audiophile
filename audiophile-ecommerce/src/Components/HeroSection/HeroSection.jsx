@@ -14,7 +14,8 @@ const HeroSection = () => {
         <div className='text-center md:text-left md:pl-24 px-3 ' >
             <h1 className='font-manrope font-bold text-lg py-3 text-white'>ZX9 SPEAKER</h1>
             <p className='text-white font-manrope text-center md:text-left pb-3 '>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-            <SeeProduct text='See Product ' />
+            <button className='text-white font-manrope bg-black hover:bg-charcoalGray p-2 px-4' > See Product</button>
+
         </div>
         </div>
 
@@ -24,20 +25,20 @@ const HeroSection = () => {
              <img src={Speaker} alt='' />
           </div>
             <div className='absolute top-4 text-left left-20 md:top-12 ' >
-              <h1>ZX7 SPEAKER</h1>
-              <SeeProduct text='See Product'  />
+              <h1 className='text-black font-manrope font-bold pb-4 text-xl '>ZX7 SPEAKER</h1>
+              <button className='text-black font-manrope hover:bg-black hover:text-white bg-gray border border-black p-2 px-4' > See Product</button>
             </div>
         </div>
 
         {/*YXI Earphones */}
-        <div className=' flex flex-col md:flex-row gap-3 justify-between ' >
+        <div className=' flex flex-col md:flex-row gap-4 justify-between ' >
           <div className='rounded-md' >
             <img src={Earphones} className='rounded-md' />
           </div>
 
-          <div className='bg-lightGray rounded-md flex flex-col justify-center items-center px-44'>
-            <h2 className='text-center'>YXI EARPHONES</h2>
-            <SeeProduct text='See Product' />
+          <div className='bg-lightGray rounded-md flex flex-col md:justify-center items-start md:items-center md:px-40 mt-4 py-12 md:py-0 md:mt-0'>
+            <h2 className='text-center pl-4 md:pl-0  pb-4'>YXI EARPHONES</h2>
+            <button className='text-black ml-4 md:ml-0 hover:bg-black hover:text-white font-manrope bg-gray border border-black p-2 px-3' > See Product</button>
           </div>
         </div>
     </div>
