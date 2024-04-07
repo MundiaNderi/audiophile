@@ -31,14 +31,14 @@ const HeroSection = () => {
         </div>
 
         {/*YXI Earphones */}
-        <div className=' flex flex-col md:flex-row gap-4 justify-between ' >
+        <div className=' flex flex-col md:flex-row gap-4  ' >
           <div className='rounded-md' >
             <img src={Earphones} className='rounded-md' />
           </div>
 
-          <div className='bg-lightGray rounded-md flex flex-col md:justify-center items-start md:items-center md:px-40 mt-4 py-12 md:py-0 md:mt-0'>
+          <div className='bg-lightGray rounded-md flex flex-col md:justify-center items-start md:items-center md:px-56 mt-4 py-12 md:py-0 md:mt-0'>
             <h2 className='text-center pl-4 md:pl-0  pb-4'>YXI EARPHONES</h2>
-            <button className='text-black ml-4 md:ml-0 hover:bg-black hover:text-white font-manrope bg-gray border border-black p-2 px-3' > See Product</button>
+            <button className='text-black ml-4 md:ml-0 hover:bg-black hover:text-white font-manrope bg-gray border border-black p-2 px-4' > See Product</button>
           </div>
         </div>
     </div>
