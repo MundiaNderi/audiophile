@@ -1,12 +1,21 @@
 import React, { useContext } from "react";
-import { StoreContext } from "../../context/StoreContext";
 import Earphones from "../../../public/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg";
-import AudioGear from "../AudioGear/AudioGear";
 import ProductSuggestions from "../ProductSuggestions/ProductSuggestions";
 import HeroProducts from "../HeroProducts/HeroProducts";
+import { StoreContext } from "../../context/StoreContext";
+import AudioGear from '../AudioGear/AudioGear'
 
 const ProductPage = () => {
-  const productData = useContext(StoreContext);
+  const { productData } = useContext(StoreContext);
+  const product = productData.find(
+    (product) => product.slug === "yx1-earphones"
+  );
+  
+  if (!product) {
+    return <div>Loading...</div>; // Handle case where product is not found
+  }
+
+  const { name, description, price, features, includes } = product;
 
   return (
     <div id="product-page" className=" ">
@@ -16,25 +25,19 @@ const ProductPage = () => {
       <div className="flex px-6 md:px-32 flex-col md:flex-row ">
         {/* Product Image */}
         <div>
-          <img src={Earphones} className=" rounded-md " />
+          <img src={Earphones} className=" rounded-md " alt={name} />
         </div>
 
         {/*Product Description */}
         <div className="flex flex-col justify-center md:p-20">
-          <p>NEW PRODUCT</p>
-          <h1 className="py-4 font-manrope font-bold text-2xl ">
-            YX1 WIRELESS EARPHONES
-          </h1>
-          <p className="font-manrope pb-4 leading-6">
-            Tailor your listening experience with bespoke dynamic drivers from
-            the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound
-            even in noisy environments with its active noise cancellation
-            feature.
-          </p>
-          <p className="font-manrope pb-4 ">$ 599</p>
+          {/* Assuming you have a `new` property in your product data */}
+          {product.new && <p>NEW PRODUCT</p>}
+          <h1 className="py-4 font-manrope font-bold text-2xl ">{name}</h1>
+          <p className="font-manrope pb-4 leading-6">{description}</p>
+          <p className="font-manrope pb-4 ">${price}</p>
           <div className="flex flex-row items-center gap-3">
             <button className="font-manrope text-black text-xs font-bold bg-lightGray p-2 px-4">
-              <span className="px-2">-</span >1<span className="px-2">+</span>
+              <span className="px-2">-</span>1<span className="px-2">+</span>
             </button>
             <button className="text-white font-manrope text-xs font-bold bg-burntSienna hover:bg-mellowApricot p-2 px-4">
               ADD TO CART
@@ -49,43 +52,23 @@ const ProductPage = () => {
           <h1 className="font-bold font-manrope py-4 tracking-wide leading-4">
             FEATURES
           </h1>
-          <p className="font-manrope font-medium text-black ">
-            Experience unrivalled stereo sound thanks to innovative acoustic
-            technology. With improved ergonomics designed for full day wearing,
-            these revolutionary earphones have been finely crafted to provide
-            you with the perfect fit, delivering complete comfort all day long
-            while enjoying exceptional noise isolation and truly immersive
-            sound.
-          </p>
-          <br />
-          <p>
-            The YX1 Wireless Earphones features customizable controls for
-            volume, music, calls, and voice assistants built into both earbuds.
-            The new 7-hour battery life can be extended up to 28 hours with the
-            charging case, giving you uninterrupted play time. Exquisite
-            craftsmanship with a splash resistant design now available in an all
-            new white and grey color scheme as well as the popular classic
-            black.
-          </p>
+          <p className="font-manrope font-medium text-black ">{features}</p>
         </div>
         <div className="items-right ">
           <h1 className="font-bold font-manrope py-4 tracking-wide leading-4">
             IN THE BOX
           </h1>
           <div className="">
-            <p className="font-manrope font-medium pb-2">Earphone Unit</p>
-            <p className="font-manrope font-medium pb-2">Multi-size Earplugs</p>
-            <p className="font-manrope font-medium pb-2">User Manual</p>
-            <p className="font-manrope font-medium pb-2">
-              USB-C Charging Cable
-            </p>
-            <p className="font-manrope font-medium  pb-2">Travel Pouch</p>
+            {includes.map((item, index) => (
+              <p className="font-manrope font-medium pb-2" key={index}>
+                {item.quantity} {item.item}
+              </p>
+            ))}
           </div>
         </div>
       </div>
-      <ProductSuggestions />
-      <HeroProducts />
-      <AudioGear />
+       <HeroProducts />
+       <AudioGear />
     </div>
   );
 };
