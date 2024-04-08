@@ -6,8 +6,8 @@ import Earphones from './pages/Earphones/Earphones'
 import Headphones from './pages/Headphones/Headphones'
 import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
-import HeadPhonesProduct from './pages/HeadPhonesProduct/HeadPhonesProduct'
 import Speakers from './pages/Speakers/Speakers'
+import ProductPage from './Components/ProductPage/ProductPage'
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
           <Route path='/headphones' element={<Headphones />} />
           <Route path='/cart' element={<Cart/>} />
           <Route path='/order' element={<PlaceOrder/>} />
-          <Route path='/headphonesproduct' element={<HeadPhonesProduct/>} />
+          <Route path='/productpage' element={<ProductPage/>} />
           <Route path='/speakers' element={<Speakers />} />
         </Routes>
         <Footer />
