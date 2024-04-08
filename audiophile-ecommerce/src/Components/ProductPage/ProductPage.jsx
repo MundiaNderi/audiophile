@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import Earphones from "../../../public/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg";
-import AudioGear from '../AudioGear/AudioGear'
-import ProductSuggestions from '../ProductSuggestions/ProductSuggestions'
+import AudioGear from "../AudioGear/AudioGear";
+import ProductSuggestions from "../ProductSuggestions/ProductSuggestions";
 import HeroProducts from "../HeroProducts/HeroProducts";
-
 
 const ProductPage = () => {
   const productData = useContext(StoreContext);
@@ -34,7 +33,9 @@ const ProductPage = () => {
           </p>
           <p className="font-manrope pb-4 ">$ 599</p>
           <div className="flex flex-row items-center gap-3">
-            <p className="font-manrope">1</p>
+            <button className="font-manrope text-black text-xs font-bold bg-lightGray p-2 px-4">
+              <span className="px-2">-</span >1<span className="px-2">+</span>
+            </button>
             <button className="text-white font-manrope text-xs font-bold bg-burntSienna hover:bg-mellowApricot p-2 px-4">
               ADD TO CART
             </button>
@@ -75,7 +76,9 @@ const ProductPage = () => {
             <p className="font-manrope font-medium pb-2">Earphone Unit</p>
             <p className="font-manrope font-medium pb-2">Multi-size Earplugs</p>
             <p className="font-manrope font-medium pb-2">User Manual</p>
-            <p className="font-manrope font-medium pb-2">USB-C Charging Cable</p>
+            <p className="font-manrope font-medium pb-2">
+              USB-C Charging Cable
+            </p>
             <p className="font-manrope font-medium  pb-2">Travel Pouch</p>
           </div>
         </div>

@@ -17,12 +17,12 @@ function App() {
         <Navbar />
         <Routes >
           <Route path='/' element={<Home/>} />
-          <Route path='/earphones' element={<Earphones />} />
-          <Route path='/headphones' element={<Headphones />} />
+          <Route path='/Earphones' element={<Earphones />} />
+          <Route path='/Headphones' element={<Headphones />} />
           <Route path='/cart' element={<Cart/>} />
           <Route path='/order' element={<PlaceOrder/>} />
           <Route path='/productpage' element={<ProductPage/>} />
-          <Route path='/speakers' element={<Speakers />} />
+          <Route path='/Speakers' element={<Speakers />} />
         </Routes>
         <Footer />
     </div>
