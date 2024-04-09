@@ -1,6 +1,13 @@
-import React from "react";
-
+import React, { useState } from "react";
+import Plus from '../../../public/assets/checkout/plus-icon.png'
+import Minus from '../../../public/assets/checkout/remove-icon.png'
+import PlusSvg from '../../../public/assets/checkout/+.svg'
+import MinusSvg from '../../../public/assets/checkout/-.svg'
 const ProductItem = ({ id, name, price, description, image, includes, features }) => {
+
+  const [itemCount, setItemCount] = useState(0)
+
+
   return (
     <div>
       <div id="product-page" className="flex pt-10 flex-col  ">
@@ -17,8 +24,15 @@ const ProductItem = ({ id, name, price, description, image, includes, features }
             <p className="font-manrope pb-4 leading-6">{description}</p>
             <p className="font-manrope pb-4 ">${price}</p>
             <div className="flex flex-row items-center gap-3">
-              <button className="font-manrope text-black text-xs font-bold bg-lightGray p-2 px-4">
-                <span className="px-2">-</span>1<span className="px-2">+</span>
+              <button className="font-manrope cursor-pointer text-black text-xs font-bold bg-lightGray p-2 px-4">
+                {!itemCount
+                ? <img onClick={() => setItemCount(prev => prev+1)} src={PlusSvg} />
+                : <div className="flex gap-4" >
+                  <img onClick={() => setItemCount(prev => (prev-1))} src={MinusSvg} className="" />
+                  <p>{itemCount}</p>
+                  <img onClick={() => setItemCount(prev => prev+1)} src={PlusSvg} />
+                </div>
+                }
               </button>
               <button className="text-white font-manrope text-xs font-bold bg-burntSienna hover:bg-mellowApricot p-2 px-4">
                 ADD TO CART
