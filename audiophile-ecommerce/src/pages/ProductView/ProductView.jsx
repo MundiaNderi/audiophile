@@ -1,19 +1,12 @@
-import React from "react";
-import ProductPage from "./ProductPage";
+import React from 'react'
+import ProductPage from '../../Components/ProductPage/ProductPage'
 
-const CategoryPage = () => {
-  // Assuming you have the category and product slugs available from the clicked category and product
-  const clickedCategorySlug = "earphones"; // Replace this with the actual clicked category slug
-  const clickedProductSlug = "yx1-earphones"; // Replace this with the actual clicked product slug
-
+const ProductView = () => {
   return (
     <div>
-      <ProductPage
-        categorySlug={clickedCategorySlug}
-        productSlug={clickedProductSlug}
-      />
+          <ProductPage category={category} />
     </div>
-  );
-};
+  )
+}
 
-export default CategoryPage;
+export default ProductView
