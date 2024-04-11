@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Plus from '../../../public/assets/checkout/plus-icon.png'
-import Minus from '../../../public/assets/checkout/remove-icon.png'
 import PlusSvg from '../../../public/assets/checkout/+.svg'
 import MinusSvg from '../../../public/assets/checkout/-.svg'
+
+
+
 const ProductItem = ({ id, name, price, description, image, includes, features }) => {
 
   const [itemCount, setItemCount] = useState(0)
@@ -15,7 +16,7 @@ const ProductItem = ({ id, name, price, description, image, includes, features }
           {/* Product Image */}
           <div>
             <img src={image.mobile} className=" md:hidden rounded-md " alt={name} />
-            <img src={image.desktop} className="hidden md:flex" alt={name} />
+            <img src={image.desktop} className="hidden md:flex rounded-md " alt={name} />
           </div>
 
           {/*Product Description */}
