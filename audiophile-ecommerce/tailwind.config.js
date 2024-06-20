@@ -17,7 +17,7 @@ export default {
         lightGray: '#F1F1F1',
         charcoalGray: '4C4C4C',
         mellowApricot: '#FBAF85',
-        solidBlack: '#000000'
+        solidBlack: '#000000',
        }
     },
      fontFamily: {

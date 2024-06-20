@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className=' flex flex-col bg-black mt-5 px-6 md:px-32 pb-20 '>
+    <div className=' flex flex-col bg-black  px-6 md:px-32 pb-20 '>
     <div className=' mt-5  flex flex-col md:flex-row justify-center md:justify-between items-center'>
       <div>
         <img src={Logo} className='pt-8 md:pt-0 ' />
