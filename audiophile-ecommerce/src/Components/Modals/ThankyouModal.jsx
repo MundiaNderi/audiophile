@@ -1,4 +1,3 @@
-import React from "react";
 import Tick from "../../../public/assets/checkout/tick.svg";
 import XX99 from "../../../public/assets/cart/image-xx99-mark-two-headphones.jpg";
 import XX59 from "../../../public/assets/cart/image-xx59-headphones.jpg";
@@ -7,7 +6,7 @@ import YX1 from "../../../public/assets/cart/image-yx1-earphones.jpg";
 const ThankyouModal = () => {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+      <div className="bg-white rounded-lg shadow-lg  py-6 p-8 max-w-md w-full">
         <div className=" mb-8 items-center">
           <img src={Tick} alt="Tick sign" className="w-16 h-16  mb-4" />
           <h2 className="text-2xl font-bold leading-8  text-black">
@@ -20,7 +19,7 @@ const ThankyouModal = () => {
 
         <div className="flex">
           <div className="flex flex-col w-1/2 bg-gray-300 rounded-l-lg  overflow-hidden">
-            <div className="flex py-4 px-4 mb-3">
+            <div className="flex py-2 md:py-4 px-4 mb-3">
               <img
                 src={XX99}
                 alt="XX99 headphones"
@@ -33,7 +32,7 @@ const ThankyouModal = () => {
               <p>x1</p>
             </div>
 
-            <div className="flex py-4 px-4 mb-3">
+            <div className="flex py-2 md:py-4 px-4 mb-3">
               <img
                 src={XX59}
                 alt="XX59 headphones"
@@ -46,7 +45,7 @@ const ThankyouModal = () => {
               <p>x2</p>
             </div>
 
-            <div className="flex py-4 px-4 mb-3">
+            <div className="flex py-2 md:py-4 px-4 mb-3">
               <img
                 src={YX1}
                 alt="YX1 earphones"

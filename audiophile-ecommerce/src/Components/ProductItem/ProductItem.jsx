@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import PlusSvg from '../../../public/assets/checkout/+.svg'
 import MinusSvg from '../../../public/assets/checkout/-.svg'
-
-
+//import { StoreContext } from "../../context/StoreContext";
+import CartModal from '../Modals/CartModal'
 
 const ProductItem = ({ id, name, price, description, image, includes, features }) => {
 
   const [itemCount, setItemCount] = useState(0)
-
 
   return (
     <div>

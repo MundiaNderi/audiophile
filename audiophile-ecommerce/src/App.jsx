@@ -10,6 +10,7 @@ import ProductPage from './Components/ProductPage/ProductPage'
 import data from '/data.json' // Assuming data.json is in the same directory
 import CheckoutPage from './pages/Checkout/CheckoutPage'
 import ThankyouModal from './Components/Modals/ThankyouModal'
+import CheckoutModal from './Components/Modals/CheckoutModal'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/order' element={<PlaceOrder />} />
         <Route path='/Speakers' element={<Speakers />} />
         <Route path='/thankyou' element={<ThankyouModal />} />
+        <Route path='/checkoutmodal' element={<CheckoutModal />} />
         {/* Modify the route to include category and slug */}
         <Route
           path='/:category/:slug'

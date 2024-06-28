@@ -11,7 +11,7 @@ const ProductPage = ({ product, setProduct }) => {
   }
 
   return (
-    <div id="product-page" className="food-display">
+    <div id="product-page" className="display">
       <div className="">
         {productData.map((item, index) => (
           <ProductItem
