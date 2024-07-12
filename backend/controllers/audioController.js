@@ -34,7 +34,6 @@ const addAudio = async (req, res) => {
 
         const audio = new audioModel({
             name: req.body.name,
-            description: req.body.description,
             price: req.body.price,
             category: req.body.category,
             image: image,
