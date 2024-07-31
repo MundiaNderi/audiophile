@@ -38,7 +38,8 @@ const addAudio = async (req, res) => {
             category: req.body.category,
             image: image,
             includes: includes,
-            features: req.body.features
+            features: req.body.features,
+            description: req.body.description
         });
 
         await audio.save();

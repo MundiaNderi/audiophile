@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import XX99 from "../../../public/assets/cart/image-xx99-mark-one-headphones.jpg";
 import XX59 from "../../../public/assets/cart/image-xx59-headphones.jpg";
 import PlusSvg from "../../../public/assets/checkout/+.svg";
 import MinusSvg from "../../../public/assets/checkout/-.svg";
 import YX1 from "../../../public/assets/cart/image-yx1-earphones.jpg";
 import { Link } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
 
 const CheckoutModal = () => {
+  const { cartItems, productData, removeFromCart } = useContext(StoreContext)
+
   // Maintain separate state for each product count
   const [counts, setCounts] = useState({
     XX99: 0,
@@ -119,6 +122,17 @@ const CheckoutModal = () => {
             </button>
           </div>
         </div>
+
+        {productData.map((item, index) => {
+          if(cartItems[item._id]>0)
+          {
+            return (
+              <div>
+                <p>{item.name}</p>
+              </div>
+            )
+          }
+        })}
 
         {/* Checkout Button */}
         <Link to="/checkout">

@@ -15,6 +15,7 @@ const audioSchema = new mongoose.Schema({
   price: { type: Number, required: true },
   image: { type: imageSchema, required: true },
   category: { type: String, required: true },
+  description: {type: String, required: true},
   includes: [includeSchema],
   features: { type: String, required: true }
 });

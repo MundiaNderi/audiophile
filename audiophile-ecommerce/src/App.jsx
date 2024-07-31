@@ -11,11 +11,16 @@ import data from '/data.json' // Assuming data.json is in the same directory
 import CheckoutPage from './pages/Checkout/CheckoutPage'
 import ThankyouModal from './Components/Modals/ThankyouModal'
 import CheckoutModal from './Components/Modals/CheckoutModal'
+import LoginPopup from './Components/LoginPopup/LoginPopup'
+import { useState } from 'react'
 
 function App() {
+  const [showLogin, setShowLogin] = useState(false)
   return (
+    <>
+    {showLogin? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
     <div className="app">
-      <Navbar />
+      <Navbar setShowLogin={setShowLogin} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Earphones' element={<Earphones />} />
@@ -33,6 +38,7 @@ function App() {
       </Routes>
       <Footer />
     </div>
+    </>
   )
 }
 

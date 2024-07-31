@@ -18,8 +18,12 @@ export default {
         charcoalGray: '4C4C4C',
         mellowApricot: '#FBAF85',
         solidBlack: '#000000',
+        semiTransparentBlack: '#00000090'
        }
     },
+    animation: {
+        'pulse-5s': 'pulse 5s infinite',
+      },
      fontFamily: {
         manrope: ['Manrope', 'sans-serif'],
       }, 

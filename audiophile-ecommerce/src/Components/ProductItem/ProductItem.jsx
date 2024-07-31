@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PlusSvg from '../../../public/assets/checkout/+.svg'
 import MinusSvg from '../../../public/assets/checkout/-.svg'
 import CheckoutModal from '../Modals/CheckoutModal';
+import { StoreContext } from "../../context/StoreContext";
 
 const ProductItem = ({ id, name, price, description, image, includes, features }) => {
-  const [itemCount, setItemCount] = useState(0);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+  const {cartItems, addToCart, removeFromCart, productData} = useContext(StoreContext)
 
   const toggleCartModal = () => {
     setIsCartModalOpen(!isCartModalOpen);
@@ -28,12 +29,12 @@ const ProductItem = ({ id, name, price, description, image, includes, features }
             <p className="font-manrope pb-4">${price}</p>
             <div className="flex flex-row items-center gap-3">
               <button className="font-manrope cursor-pointer text-black text-xs font-bold bg-lightGray p-2 px-4">
-                {!itemCount
-                  ? <img onClick={() => setItemCount(prev => prev + 1)} src={PlusSvg} alt="Increase" />
+                {!cartItems[id]
+                  ? <img onClick={() => addToCart(id)} src={PlusSvg} alt="Increase" />
                   : <div className="flex gap-4">
-                      <img onClick={() => setItemCount(prev => prev - 1)} src={MinusSvg} alt="Decrease" />
-                      <p>{itemCount}</p>
-                      <img onClick={() => setItemCount(prev => prev + 1)} src={PlusSvg} alt="Increase" />
+                      <img onClick={() => removeFromCart(id)} src={MinusSvg} alt="Decrease" />
+                      <p>{cartItems[id]}</p>
+                      <img onClick={() => addToCart(id)} src={PlusSvg} alt="Increase" />
                     </div>
                 }
               </button>
@@ -70,7 +71,7 @@ const ProductItem = ({ id, name, price, description, image, includes, features }
       </div>
 
       {/* Cart Modal */}
-      {isCartModalOpen && <CheckoutModal onClose={toggleCartModal} />}
+      {isCartModalOpen && <CheckoutModal onClose={toggleCartModal} cartItems={cartItems} productData={productData} />}
     </div>
   );
 };

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import StoreContext from '../../context/StoreContext'
+
 
 const CartModal = () => {
+     const [ cartItems, audio_list, removeCart] = useContext(StoreContext)
     return (
         <div>
             {/*Mark II */}

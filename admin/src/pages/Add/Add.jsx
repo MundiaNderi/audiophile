@@ -4,14 +4,14 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Add = () => {
-  const url = "http://localhost:4000";
+const Add = ({ url }) => {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: '',
     features: '',
     price: '',
     includes: '',
+    description: '',
     category: 'Earphones'
   });
 
@@ -34,6 +34,7 @@ const Add = () => {
     formData.append('price', Number(data.price));
     formData.append('includes', data.includes);
     formData.append('category', data.category);
+    formData.append('description', data.description);
     formData.append('image', image);
 
     try {
@@ -48,6 +49,7 @@ const Add = () => {
           features: '',
           price: '',
           includes: '',
+          description: '',
           category: 'Earphones'
         });
         setImage(false);
@@ -95,6 +97,18 @@ const Add = () => {
           />
         </div>
         <div className="add-product-description flex flex-col w-72">
+          <p>Product Description</p>
+          <textarea
+            onChange={onChangeHandler}
+            value={data.description}
+            className=' border p-3'
+            name='description'
+            rows='6'
+            placeholder='Write content here'
+            required
+          />
+        </div>
+        <div className="add-product-features flex flex-col w-72">
           <p>Product Features</p>
           <textarea
             onChange={onChangeHandler}
@@ -114,7 +128,7 @@ const Add = () => {
             className=' border p-3'
             name='includes'
             rows='6'
-            placeholder='Write content here'
+            placeholder='1 x Travel pouch'
             required
           />
         </div>

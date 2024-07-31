@@ -4,6 +4,7 @@ import cors from 'cors'
 import { connectDB } from './config/db.js'
 import dotenv from 'dotenv';
 import audioRouter from './routes/audioRoute.js';
+import userRouter from './routes/userRoute.js';
 
 
 dotenv.config();
@@ -21,8 +22,8 @@ connectDB();
 
 // api endpoints
 app.use('/api/audio', audioRouter)
-app.use('/images', express.static('uploads'))
-
+app.use('/uploads', express.static('uploads'))
+app.use('/api/user', userRouter)
 
 // http method to request data from the server
 app.get("/", (req, res) => {
