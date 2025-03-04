@@ -5,6 +5,7 @@ Audiophile is an audio e-commerce platform built on the MERN stack (MongoDB, Exp
 ## Deployed App
 
 Visit the deployed version [here](https://audiophile-1.vercel.app)
+
 ## Features
 
 - **Product Catalog**: Browse a wide range of audio products including earphones, headphones, and speakers.
@@ -22,28 +23,26 @@ Visit the deployed version [here](https://audiophile-1.vercel.app)
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/MundiaNderi/audiophile.git
-    ```
+   ```bash
+   git clone https://github.com/MundiaNderi/audiophile.git
+   ```
 
 2. Navigate into the project directory:
 
-    ```bash
-    cd tomato
-    ```
+   ```bash
+   cd audiophile
+   ```
 
 3. Install dependencies for both frontend and backend:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 4. Set up your environment variables for MongoDB and other configurations.
 
 5. Start the app:
 
-    ```bash
-    npm run dev
-    ```
-
-
+   ```bash
+   npm run dev
+   ```
