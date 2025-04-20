@@ -1,45 +1,56 @@
-import productData from '/data.json'
 import { createContext, useEffect, useState } from "react";
+import axios from "axios";
 
-export const StoreContext = createContext(null)
+export const StoreContext = createContext(null);
 
-console.log(productData)
 
 const StoreContextProvider = (props) => {
-
-    //const url = "http://localhost:4000";
+    const [productData, setProductData] = useState([]);
     const [cartItems, setCartItems] = useState({});
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("http://localhost:4000/api/audio/list");
+                console.log(response.data.data);
+                setProductData(response.data.data);
+            } catch (error) {
+                console.error("Error fetching product data:", error);
+            }
+        };
+        fetchData();
+    }, [])
+
 
     const addToCart = async (itemId) => {
         if (!cartItems[itemId]) {
-            setCartItems((prev) => ({ ...prev, [itemId]: 1 }))
+            setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
         } else {
-            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
+            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         }
-    }
+    };
 
     const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
-    }
+        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    };
 
-    useEffect(()=> {
+    useEffect(() => {
         console.log(cartItems);
-    }, [cartItems])
-
+    }, [cartItems]);
 
     const contextValue = {
         productData,
         addToCart,
         cartItems,
         setCartItems,
-        removeFromCart
-    }
+        removeFromCart,
+    };
 
     return (
         <StoreContext.Provider value={contextValue}>
             {props.children}
         </StoreContext.Provider>
-    )
-}
+    );
+};
 
-export default StoreContextProvider
+export default StoreContextProvider;

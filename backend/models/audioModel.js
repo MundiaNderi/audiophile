@@ -15,11 +15,11 @@ const audioSchema = new mongoose.Schema({
   price: { type: Number, required: true },
   image: { type: imageSchema, required: true },
   category: { type: String, required: true },
-  description: {type: String, required: true},
+  description: { type: String, required: true },
   includes: [includeSchema],
   features: { type: String, required: true }
 });
 
-const audioModel = mongoose.models.audio || mongoose.model("audio", audioSchema);
+const audioModel = mongoose.models.audios || mongoose.model("audios", audioSchema, "audios");
 
 export default audioModel;

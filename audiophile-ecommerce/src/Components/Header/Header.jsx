@@ -2,9 +2,23 @@ import React from "react";
 import SeeProduct from "../Button/SeeProduct";
 import Headphones from "/image-hero.jpg";
 import MobileHeadphones from "/image-header.jpg";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
+import { useContext } from "react";
+
 
 const Header = () => {
+  const navigate = useNavigate();
+  const { productData } = useContext(StoreContext);
+
+  const product = productData.find((item) => item.slug === "xx99-mark-two-headphones");
+
+  const handleClick = () => {
+    if (product) {
+      navigate(`/product/${product._id}`);
+
+    }
+  }
   return (
     <div className="flex  md:flex-row bg-black pt-4 md:px-32">
       <div className="md:w-1/2 flex items-center md:pr-4 ">
@@ -24,9 +38,9 @@ const Header = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link to="/:category/:slug">
+          <button onClick={handleClick}>
             <SeeProduct text="See Product" />
-          </Link>
+          </button>
         </div>
       </div>
       <div className="hidden md:block md:w-1/2">

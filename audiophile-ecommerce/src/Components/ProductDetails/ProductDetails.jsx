@@ -1,21 +1,24 @@
-import React, { useContext, useState } from "react";
+import { StoreContext } from "../../context/StoreContext";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
 import PlusSvg from "../../../public/assets/checkout/+.svg";
 import MinusSvg from "../../../public/assets/checkout/-.svg";
 import CheckoutModal from "../Modals/CheckoutModal";
-import { StoreContext } from "../../context/StoreContext";
+import { useState } from "react";
+import AudioGear from "../AudioGear/AudioGear";
+import HeroProducts from "../HeroProducts/HeroProducts";
+import Suggested from "../Suggested/Suggested";
 
-const ProductItem = ({
-  id,
-  name,
-  price,
-  description,
-  image,
-  includes,
-  features,
-}) => {
+const ProductDetails = () => {
+  const { id } = useParams();
+  console.log("Product ID:", id);
+  const { cartItems, addToCart, removeFromCart, productData } = useContext(StoreContext);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-  const { cartItems, addToCart, removeFromCart, productData } =
-    useContext(StoreContext);
+  const imageBaseUrl = "http://localhost:4000";
+  const product = productData.find((item) => item._id === id);
+
+  if (!product)
+    return <p className="text-center"> Product not found or still loading</p>;
 
   const toggleCartModal = () => {
     setIsCartModalOpen(!isCartModalOpen);
@@ -24,26 +27,28 @@ const ProductItem = ({
   return (
     <div>
       <div id="product-page" className="flex pt-10 flex-col">
-        <div className="flex px-6 md:px-32 flex-col md:flex-row">
+        <div className="flex px-6  md:px-32 flex-col md:flex-row">
           {/* Product Image */}
           <div>
             <img
-              src={image.mobile}
+              src={`${imageBaseUrl}${product.image.mobile}`}
               className="md:hidden rounded-md"
-              alt={name}
+              alt={product.name}
             />
             <img
-              src={image.desktop}
+              src={`${imageBaseUrl}${product.image.desktop}`}
               className="hidden md:flex rounded-md"
-              alt={name}
+              alt={product.name.desktop}
             />
           </div>
 
           {/* Product Description */}
           <div className="flex flex-col justify-center md:p-20">
-            <h1 className="py-4 font-manrope font-bold text-2xl">{name}</h1>
-            <p className="font-manrope pb-4 leading-6">{description}</p>
-            <p className="font-manrope pb-4">${price}</p>
+            <h1 className="py-4 font-manrope font-bold text-2xl">
+              {product.name}
+            </h1>
+            <p className="font-manrope pb-4 opacity-50 leading-6">{product.description}</p>
+            <p className="font-manrope font-bold pb-4">$ { }{product.price}</p>
             <div className="flex flex-row items-center gap-3">
               <button className="font-manrope cursor-pointer text-black text-xs font-bold bg-lightGray p-2 px-4">
                 {!cartItems[id] ? (
@@ -84,23 +89,29 @@ const ProductItem = ({
             <h1 className="font-bold font-manrope py-4 tracking-wide leading-4">
               FEATURES
             </h1>
-            <p className="font-manrope font-medium text-red-500 ">{features}</p>
+            <p className="font-manrope leading-6 opacity-40 font-medium">{product.features}</p>
           </div>
-          <div className="items-right ml-20">
+          <div className="items-right md:ml-20">
             <h1 className="font-bold font-manrope py-4 tracking-wide leading-4">
               IN THE BOX
             </h1>
             <div className="">
-              <ul className="list-none space-y-1">
-                {includes.map((include, index) => (
-                  <li className="" key={index}>
-                    {include.quantity} x {include.item}
-                  </li>
-                ))}
+              <ul className="list-none space-y-1 opacity-50">
+                {product.includes.flatMap((include, index) =>
+                  include.item
+                    .split(/\r?\n|\r|↵/)
+                    .filter((line) => line.trim() !== "")
+                    .map((line, i) => <li key={`${index}-${i}`}>{line}</li>)
+                )}
               </ul>
             </div>
           </div>
         </div>
+        <div className="suggestions">
+        </div>
+        <Suggested />
+        <HeroProducts />
+        <AudioGear />
       </div>
 
       {/* Cart Modal */}
@@ -115,4 +126,4 @@ const ProductItem = ({
   );
 };
 
-export default ProductItem;
+export default ProductDetails;

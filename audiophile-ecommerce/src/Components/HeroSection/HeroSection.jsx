@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SeeProduct from '../Button/SeeProduct';
 import SteinSpeaker from '/assets/shared/desktop/image-speaker-zx9.png';
 import Speaker from '/image-speaker-zx7.jpg'
 import Earphones from '/image-earphones-yx1.jpg'
+import { StoreContext } from '../../context/StoreContext';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+
+  const { productData} = useContext(StoreContext)
+  const navigate = useNavigate();
+
+  const zx9  = productData.find((item) => item.slug === "zx9-speaker")
+  const zx7  = productData.find((item) => item.slug === "zx7-speaker")
+  const yx1  = productData.find((item) => item.slug === "yx1-earphones")
   return (
     <div className='md:mx-32 px-4 flex flex-col  gap-6'>
       <div className='bg-burntSienna flex flex-col md:flex-row items-center justify-center py-4 md:px-24 rounded-md '>
@@ -14,7 +23,9 @@ const HeroSection = () => {
         <div className='text-center md:text-left md:pl-24 px-3 ' >
             <h1 className='font-manrope font-bold text-lg py-3 text-white'>ZX9 SPEAKER</h1>
             <p className='text-white font-manrope text-center md:text-left pb-3 '>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-            <button className='text-white font-manrope bg-black hover:bg-charcoalGray p-2 px-4' > See Product</button>
+            <button 
+            onClick={() => navigate(`/product/${zx9._id}`)}
+            className='text-white font-manrope bg-black hover:bg-charcoalGray p-2 px-4' > See Product</button>
 
         </div>
         </div>
@@ -26,7 +37,9 @@ const HeroSection = () => {
           </div>
             <div className='absolute top-4 text-left left-20 md:top-12 ' >
               <h1 className='text-black font-manrope font-bold pb-4 text-xl '>ZX7 SPEAKER</h1>
-              <button className='text-black font-manrope hover:bg-black hover:text-white bg-gray border border-black p-2 px-4' > See Product</button>
+              <button 
+              onClick={() => navigate(`/product/${zx7._id}`)}
+              className='text-black font-manrope hover:bg-black hover:text-white bg-gray border border-black p-2 px-4' > See Product</button>
             </div>
         </div>
 
@@ -38,7 +51,9 @@ const HeroSection = () => {
 
           <div className='bg-lightGray rounded-md flex flex-col md:justify-center items-start md:items-center md:px-56 mt-4 py-12 md:py-0 md:mt-0'>
             <h2 className='text-center pl-4 md:pl-0  pb-4'>YXI EARPHONES</h2>
-            <button className='text-black ml-4 md:ml-0 hover:bg-black hover:text-white font-manrope bg-gray border border-black p-2 px-4' > See Product</button>
+            <button 
+            onClick={() => navigate(`/product/${yx1._id}`)}
+            className='text-black ml-4 md:ml-0 hover:bg-black hover:text-white font-manrope bg-gray border border-black p-2 px-4' > See Product</button>
           </div>
         </div>
     </div>

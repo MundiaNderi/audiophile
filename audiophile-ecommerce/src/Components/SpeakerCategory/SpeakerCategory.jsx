@@ -2,11 +2,14 @@ import React from "react";
 import SpeakerData from "/data.json";
 import SeeProduct from "../../Components/Button/SeeProduct";
 import { Link } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
+import { useContext } from "react";
 
 const SpeakersCategory = () => {
-  const filteredSpeaker = SpeakerData.filter((item) => item.id === 5);
+  const { productData } = useContext(StoreContext);
+  const product = productData.filter((item) => item.category === "Speakers");
+  const imageBaseUrl = "http://localhost:4000";
 
-  const ZX9Speaker = SpeakerData.filter((item) => item.id === 6);
   return (
     <div className="">
       <div className="bg-black px-6 md:px-32 ">
@@ -16,17 +19,22 @@ const SpeakersCategory = () => {
       </div>
 
       {/*ZXZ SPEAKER */}
-      {filteredSpeaker.map((data) => (
+      {product.map((data, index) => (
         <div
-          className="flex flex-col md:flex-row mx-6 md:mx-32 mt-20  "
+          className={`flex flex-col gap-20 md:flex-row mx-6 md:mx-32 ${
+            index % 2 !== 0 ? "md:flex-row-reverse" : ""
+          } mt-20`}
           key={data.id}
         >
           {/*Images */}
           <div>
-            <img src={data.image.mobile} className="md:hidden rounded-md " />
             <img
-              src={data.image.desktop}
-              className="hidden md:flex rounded-md pr-24 "
+              src={`${imageBaseUrl}${data.image.mobile}`}
+              className="md:hidden rounded-md "
+            />
+            <img
+              src={`${imageBaseUrl}${data.image.desktop}`}
+              className="hidden md:flex rounded-md"
             />
           </div>
           <div className="flex flex-col justify-center items-center md:items-start">
@@ -34,39 +42,10 @@ const SpeakersCategory = () => {
             <h1 className="font-manrope text-2xl font-bold pb-4 ">
               {data.name}
             </h1>
-            <p className=" font-manrope pb-4 text-center md:text-left ">
+            <p className=" font-manrope pb-4 w-5/6 text-center md:text-left ">
               {data.description}
             </p>
-            <Link to={`/${data.category}/${data.slug}`}>
-              <SeeProduct text="See Product" />
-            </Link>
-          </div>
-        </div>
-      ))}
-
-      {/*ZX9 SPEAKER */}
-
-      {ZX9Speaker.map((data) => (
-        <div
-          className="flex flex-col md:flex-row-reverse mt-10 px-6 md:px-32"
-          key={data.id}
-        >
-          <div className="flex flex-col justify-center items-center">
-            <img src={data.image.mobile} className=" md:hidden rounded-md " />
-            <img
-              src={data.image.desktop}
-              className="hidden md:flex rounded-md pl-24 "
-            />
-          </div>
-
-          <div className="flex flex-col justify-center md:justify-normal items-center md:items-start ">
-            <h1 className=" font-manrope text-2xl font-bold py-3 ">
-              {data.name}
-            </h1>
-            <p className="pb-4 font-manrope text-center md:text-left ">
-              {data.description}
-            </p>
-            <Link to={`/${data.category}/${data.slug}`}>
+            <Link to={`/product/${data._id}`}>
               <SeeProduct text="See Product" />
             </Link>
           </div>

@@ -2,9 +2,15 @@ import React from "react";
 import EarphonesData from "/data.json";
 import SeeProduct from "../../Components/Button/SeeProduct";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { StoreContext } from "../../context/StoreContext";
 
 const EarphoneProducts = () => {
-  const Earphones = EarphonesData.filter((item) => item.id === 1);
+  //const Earphones = EarphonesData.filter((item) => item.id === 1);
+  const { productData } = useContext(StoreContext);
+  const product = productData.filter((item) => item.category === "Earphones");
+  const imageBaseUrl = "http://localhost:4000";
+  
   return (
     <div className="">
       <div className="py-10 bg-black">
@@ -14,15 +20,17 @@ const EarphoneProducts = () => {
       </div>
 
       <div className="pt-20">
-        {Earphones.map((data) => (
+        {product.map((data, index) => (
           <div
-            className="flex flex-col md:flex-row px-6 md:px-32"
+            className={`flex flex-col md:flex-row px-6 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} md:px-32`}
             key={data.id}
           >
             <div>
-              <img src={data.image.mobile} className=" md:hidden rounded-md " />
               <img
-                src={data.image.desktop}
+                src={`${imageBaseUrl}${data.image.mobile}`}
+                className=" md:hidden rounded-md " />
+              <img
+                src={`${imageBaseUrl}${data.image.desktop}`}
                 className="hidden md:flex pr-24 rounded-md"
               />
             </div>
@@ -35,7 +43,7 @@ const EarphoneProducts = () => {
               <p className="text-center font-manrope md:text-left py-4">
                 {data.description}
               </p>
-              <Link to={`/${data.category}/${data.slug}`}>
+              <Link to={`/product/${data._id}`}>
                 <SeeProduct text="See Product" />
               </Link>
             </div>

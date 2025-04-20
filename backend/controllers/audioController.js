@@ -43,6 +43,7 @@ const addAudio = async (req, res) => {
         });
 
         await audio.save();
+        console.log("Saved to DB:", audio);
         res.status(201).json({ message: 'Audio item added successfully', audio });
     } catch (error) {
         console.error('Error adding audio item:', error); // Improved logging
@@ -56,27 +57,28 @@ const addAudio = async (req, res) => {
 const listAudio = async (req, res) => {
     try {
         const audio = await audioModel.find({});
-        res.json({success: true, data:audio})
+        console.log('Fetched data from DB:', audio);
+        res.json({ success: true, data: audio })
     } catch (error) {
         console.log(error)
-        res.json({success:false, message: 'Error'})
+        res.json({ success: false, message: 'Error' })
     }
 }
 
 // delete audio item
 
-const removeAudio = async(req, res) => {
+const removeAudio = async (req, res) => {
     try {
         const audio = await audioModel.findById(req.body.id);
         // delete image from uploads folder
-        fs.unlink(`uploads/${audio.image}`, () => {})
+        fs.unlink(`uploads/${audio.image}`, () => { })
 
         await audioModel.findByIdAndDelete(req.body.id)
-        res.json({success: true, message: "Food Removed"})
+        res.json({ success: true, message: "Food Removed" })
     } catch (error) {
         console.log(error)
-        res.json({success:false, message: "Error"})
+        res.json({ success: false, message: "Error" })
     }
 }
 
-export { addAudio , listAudio, removeAudio};
+export { addAudio, listAudio, removeAudio };
