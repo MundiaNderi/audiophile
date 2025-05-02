@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import SeeProduct from '../Button/SeeProduct';
+import { useContext } from 'react';
 import SteinSpeaker from '/assets/shared/desktop/image-speaker-zx9.png';
 import Speaker from '/image-speaker-zx7.jpg'
 import Earphones from '/image-earphones-yx1.jpg'

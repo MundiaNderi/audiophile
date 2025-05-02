@@ -7,7 +7,8 @@ import SeeProduct from "../Button/SeeProduct";
 const Suggested = () => {
   const { productData } = useContext(StoreContext);
   const suggestedProducts = productData.slice(0, 3);
-  const imageBaseUrl = "http://localhost:4000";
+  //const imageBaseUrl = "http://localhost:4000";
+   const imageBaseUrl = "https://audiophile-api-qtz6.onrender.com"; 
 
   return (
     <div className=" md:mx-32 md:mb-20">

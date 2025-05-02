@@ -14,7 +14,9 @@ const ProductDetails = () => {
   console.log("Product ID:", id);
   const { cartItems, addToCart, removeFromCart, productData } = useContext(StoreContext);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-  const imageBaseUrl = "http://localhost:4000";
+  //const imageBaseUrl = "http://localhost:4000";
+   const imageBaseUrl = "https://audiophile-api-qtz6.onrender.com"; 
+  
   const product = productData.find((item) => item._id === id);
 
   if (!product)

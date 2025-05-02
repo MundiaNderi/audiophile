@@ -8,7 +8,8 @@ import { useContext } from "react";
 const SpeakersCategory = () => {
   const { productData } = useContext(StoreContext);
   const product = productData.filter((item) => item.category === "Speakers");
-  const imageBaseUrl = "http://localhost:4000";
+  const imageBaseUrl = "https://audiophile-api-qtz6.onrender.com";
+  //const imageBaseUrl = "http://localhost:4000";
 
   return (
     <div className="">

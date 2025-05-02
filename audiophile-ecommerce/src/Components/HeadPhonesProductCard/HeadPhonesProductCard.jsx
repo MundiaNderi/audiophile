@@ -7,7 +7,9 @@ import { useContext } from "react";
 const HeadPhonesProductCard = () => {
   const { productData } = useContext(StoreContext);
   const product = productData.filter((item) => item.category === "Headphones");
-  const imageBaseUrl = "http://localhost:4000";
+  //const imageBaseUrl = "http://localhost:4000";
+  const imageBaseUrl = "https://audiophile-api-qtz6.onrender.com";
+
   return (
     <>
       <div className="flex flex-col px-4 md:px-32">
@@ -40,9 +42,7 @@ const HeadPhonesProductCard = () => {
               <p className="text-center md:text-left w-5/6 py-4 ">
                 {data.description}
               </p>
-              <Link
-                to={`/product/${data._id}`}
-              >
+              <Link to={`/product/${data._id}`}>
                 <SeeProduct text="See Product" />
               </Link>
             </div>
