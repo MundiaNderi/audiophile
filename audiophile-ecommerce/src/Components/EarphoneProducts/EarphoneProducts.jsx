@@ -9,8 +9,8 @@ const EarphoneProducts = () => {
   //const Earphones = EarphonesData.filter((item) => item.id === 1);
   const { productData } = useContext(StoreContext);
   const product = productData.filter((item) => item.category === "Earphones");
-  //const imageBaseUrl = "http://localhost:4000";
-  const imageBaseUrl = "https://audiophile-api-qtz6.onrender.com"; 
+  const imageBaseUrl = "http://localhost:4000";
+  //const imageBaseUrl = "https://audiophile-api-qtz6.onrender.com"; 
   
   return (
     <div className="">

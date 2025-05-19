@@ -11,8 +11,7 @@ const StoreContextProvider = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                //const response = await axios.get("https://localhost:4000/api/audio/list");
-                const response = await axios.get("https://audiophile-api-qtz6.onrender.com/api/audio/list");
+                const response = await axios.get("http://localhost:4000/api/audio/list");
                 console.log(response.data.data);
                 setProductData(response.data.data);
             } catch (error) {
